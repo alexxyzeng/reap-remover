@@ -27,7 +27,7 @@ export default function transformer(file, api) {
         } else {
           parsedValue = name
         }
-        result += ` ?? ${parsedValue}`;
+        result += ` || ${parsedValue}`;
       }
       return result;
       return j.identifier(
