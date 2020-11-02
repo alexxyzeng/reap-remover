@@ -20,9 +20,14 @@ export default function transformer(file, api) {
       const parsedKeys = keys.value.split(".").join("?.");
       result = `${source.name}?.${parsedKeys}`;
       if (params.length === 3) {
-        const defaultValue = params[2].value;
-        let parsedValue = typeof defaultValue === "string" ? `'${defaultValue}'` : defaultValue;
-        result += ` || ${parsedValue}`;
+        const { value, type, name } = params[2];
+        let parsedValue = value
+        if (type === 'Literal') {
+          parsedValue = typeof value === 'string' ? `'${value}'` : value
+        } else {
+          parsedValue = name
+        }
+        result += ` ?? ${parsedValue}`;
       }
       return result;
       return j.identifier(
