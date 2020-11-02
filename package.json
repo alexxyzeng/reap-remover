@@ -1,0 +1,21 @@
+{
+  "name": "reap-remover",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "remove-reaper": "bin/transform.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jscodeshift": "^0.11.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.12.1"
+  }
+}
